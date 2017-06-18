@@ -17,25 +17,19 @@ package net.betzel.camel.component.lmdb;
  */
 
 import org.apache.camel.Endpoint;
-import org.apache.camel.impl.UriEndpointComponent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.camel.Exchange;
+import org.apache.camel.impl.DefaultProducer;
 
-import java.util.Map;
+public class LMDbProducer extends DefaultProducer {
 
-public class LMDbComponent extends UriEndpointComponent {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LMDbComponent.class);
-
-    public LMDbComponent(Class<? extends Endpoint> endpointClass) {
-        super(endpointClass);
+    public LMDbProducer(Endpoint endpoint) {
+        super(endpoint);
     }
 
     @Override
-    protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> params) throws Exception {
-        Endpoint endpoint = new LMDbEndpoint(uri, this);
-        setProperties(endpoint, params);
-        return endpoint;
+    public void process(Exchange exchange) throws Exception {
+
     }
 
 }

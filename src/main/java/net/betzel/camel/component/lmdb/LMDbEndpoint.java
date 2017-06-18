@@ -16,26 +16,34 @@ package net.betzel.camel.component.lmdb;
  * limitations under the License.
  */
 
-import org.apache.camel.Endpoint;
-import org.apache.camel.impl.UriEndpointComponent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.camel.Component;
+import org.apache.camel.Consumer;
+import org.apache.camel.Processor;
+import org.apache.camel.Producer;
+import org.apache.camel.impl.DefaultEndpoint;
 
-import java.util.Map;
+public class LMDbEndpoint extends DefaultEndpoint {
 
-public class LMDbComponent extends UriEndpointComponent {
+    public LMDbEndpoint() {
+    }
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LMDbComponent.class);
-
-    public LMDbComponent(Class<? extends Endpoint> endpointClass) {
-        super(endpointClass);
+    public LMDbEndpoint(String endpointUri, Component component) {
+        super(endpointUri, component);
     }
 
     @Override
-    protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> params) throws Exception {
-        Endpoint endpoint = new LMDbEndpoint(uri, this);
-        setProperties(endpoint, params);
-        return endpoint;
+    public Producer createProducer() throws Exception {
+        return null;
+    }
+
+    @Override
+    public Consumer createConsumer(Processor processor) throws Exception {
+        return null;
+    }
+
+    @Override
+    public boolean isSingleton() {
+        return true;
     }
 
 }
