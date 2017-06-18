@@ -1,0 +1,35 @@
+## LMDb Component
+
+*Available as of Camel version 2.16*
+
+The *lmdb* component provides a high-performance embedded transactional
+database in the form of a key-value store.
+
+Maven users will need to add the following dependency to
+their `pom.xml` for this component:
+
+[source,xml]
+------------------------------------------------------------
+<dependency>
+    <groupId>net.betzel.camel</groupId>
+    <artifactId>camel-lmdb</artifactId>
+    <version>x.x.x</version>
+    <!-- use the same version as your Camel core version -->
+</dependency>
+------------------------------------------------------------
+
+### URI format
+
+[source,java]
+-----------------------------
+lmdb://databaseName[?options]
+-----------------------------
+
+You can append query options to the URI in the following
+format, `?option=value&option=#beanRef&...`
+
+### Options
+
+
+// component options: START
+The lmdb component supports x options which are listed below.
